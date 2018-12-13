@@ -7,7 +7,7 @@ class GoogleAuth extends Component {
       window.gapi.client
         .init({
           clientId:
-            "775834325843-556f4183mdmk6bjcm9b8jp4eei01tvbd.apps.googleusercontent.com",
+            "745406031141-0t6ujatfs7n4tudpd1674d226mtivg9l.apps.googleusercontent.com",
           scope: "email"
         })
         .then(() => {
@@ -20,7 +20,7 @@ class GoogleAuth extends Component {
 
   onAuthChange = isSignedIn => {
     if (isSignedIn) {
-      this.props.signIn();
+      this.props.signIn(this.auth.currentUser.get().getId());
     } else {
       this.props.signOut();
     }
