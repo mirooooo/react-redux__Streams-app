@@ -1,3 +1,4 @@
+import _ from "lodash";
 import {
   CREATE_STREAM,
   FETCH_STREAMS,
@@ -14,8 +15,9 @@ export default (state = {}, action) => {
       return { ...state, [action.payload.id]: action.payload };
     case EDIT_STREAM:
       return { ...state, [action.payload.id]: action.payload };
-    case CREATE_STREAM:
-      return { ...state, [action.payload.id]: action.payload };
+    case DELETE_STREAM:
+      // _.omit--Create a new object with all properties without 'action.payload'(second argument)
+      return _.omit(state, action.payload);
     default:
       return state;
   }
