@@ -10,7 +10,7 @@ class StreamShow extends React.Component {
     if (!this.props.stream) {
       return <div>Loading</div>;
     }
-
+    // Deconstructing Object
     const { title, description } = this.props.stream;
 
     return (
